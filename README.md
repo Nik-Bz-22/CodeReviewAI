@@ -6,15 +6,15 @@
 
 
 ## Features
-- Gemini API Integration: Performs code analysis and generates reviews.
-- GitHub API Integration: Fetches repository contents for review.
-- Asynchronous Programming: Improves performance for external API calls.
-- API Rate Limits asyncio.Semaphore
-- Error Handling & Logging: Manages API errors and ensures traceable logging.
-- Test Coverage: Includes unit tests with pytest and httpx.
-- Caching: Utilizes Redis with TTL mechanism for improved performance.
-- Validation: Use Pydantic for input validation
-- Containerization: Docker for easy deployment
+- **Gemini API Integration**: Performs code analysis and generates reviews.
+- **GitHub API Integration**: Fetches repository contents for review.
+- **Asynchronous Programming**: Improves performance for external API calls.
+- **API Rate Limits**: asyncio.Semaphore
+- **Error Handling & Logging**: Manages API errors and ensures traceable logging.
+- **Test Coverage**: Includes unit tests with pytest and httpx.
+- **Caching**: Utilizes Redis with TTL mechanism for improved performance.
+- **Validation**: Use Pydantic for input validation
+- **Containerization**: Docker for easy deployment
 
 
 ## Setup Instructions
@@ -26,9 +26,12 @@
     cd CodeReviewAI
 ```
 
+### .ENV
+**Create .env file in the root of the project using the .env.example template.**
+
 ## Important Notice!
 
-Since the Gemini API is restricted in certain regions (see the list of available countries [here](https://ai.google.dev/gemini-api/docs/available-regions)), you need to enable a VPN before running the application to ensure it works correctly.
+**Since the Gemini API is restricted in certain regions (see the list of available countries [here](https://ai.google.dev/gemini-api/docs/available-regions)), you need to enable a VPN before running the application to ensure it works correctly.**
 
 ### Start with Docker
 ```bash
