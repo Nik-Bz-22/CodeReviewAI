@@ -4,6 +4,8 @@ import asyncio
 import base64
 import httpx
 
+from ..endpoints.loggers.init_logging import logger
+
 
 def to_clear_git_api_response(api_response) -> str:
     file_meta_info = api_response.json()
@@ -12,6 +14,7 @@ def to_clear_git_api_response(api_response) -> str:
     try:
         clear_content = base64.b64decode(encoded_file_content).decode("utf-8")
     except (ValueError, UnicodeDecodeError) as exc:
+        logger.info(exc)
         raise ValueError("Error decoding base64 content.") from exc
 
     return clear_content
@@ -71,4 +74,5 @@ async def fetch_repository_files(repo_url: str) -> Dict[str, str]:
     for result in results:
         all_data[result[0]] = result[1]
 
+    logger.info(f"Data fetched for {owner}/{repo}")
     return all_data

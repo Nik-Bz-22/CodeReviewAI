@@ -1,5 +1,7 @@
-import os
 from dotenv import load_dotenv
+from typing import Final
+import pathlib
+import os
 
 load_dotenv()
 
@@ -27,3 +29,6 @@ else:
 REDIS_DB = 0
 REDIS_REVIEW_TTL = 60 * 60
 
+
+ROOT_DIR: Final[pathlib.Path] = pathlib.Path(__file__).parents[1]
+LOGS_DIR: Final[pathlib.Path] = ROOT_DIR.joinpath("logs")

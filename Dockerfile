@@ -17,7 +17,7 @@ COPY --chown=${USER} requirements.txt requirements.txt
 RUN pip install --upgrade pip && \
     pip install --requirement requirements.txt
 
-COPY --chown=${USER} Makefile Makefile
+#COPY --chown=${USER} Makefile Makefile
 COPY --chown=${USER} ./app app
 
 USER ${USER}
