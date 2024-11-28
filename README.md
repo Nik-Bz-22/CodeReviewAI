@@ -100,7 +100,13 @@ POST / http://localhost:8000/review/
     }
 }
 ```
+### Testing and Code Coverage  
 
+To check the percentage of code covered by tests, run the following command:  
+
+```bash  
+    make coverage  
+```
 
 ## What-if part:
 To reduce memory usage, it’s possible to use two or more Redis databases. With such a decomposition, it will be possible to add a time-to-live (TTL) for each repository analysis individually, rather than applying it to the entire repository at once. 
