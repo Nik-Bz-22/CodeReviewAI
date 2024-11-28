@@ -19,6 +19,7 @@ RUN pip install --upgrade pip && \
 
 #COPY --chown=${USER} Makefile Makefile
 COPY --chown=${USER} ./app app
+COPY --chown=${USER} ./logs logs
 
 USER ${USER}
 
